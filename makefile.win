@@ -1,0 +1,11 @@
+PROJECT_NAME ?= CoffeeShop
+ORG_NAME ?= CoffeeShop
+REPO_NAME ?= Coffee-Shop
+
+.PHONY: migrations db
+
+migrations: 
+	cd ./CoffeeShop.Data && dotnet ef --startup-project ../CoffeeShop.Web/ migrations add $(mname) && cd ..
+db:
+	cd ./CoffeeShop.Data && dotnet ef --startup-project ../CoffeeShop.Web/ database update && cd ..
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
